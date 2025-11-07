@@ -1,0 +1,28 @@
+{
+  "name": "vite-react-monaco-yaml-sample",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "start": "mkdir -p public/monaco-editor && cp -R node_modules/monaco-editor/min public/monaco-editor && vite",
+    "build": "vite build"
+  },
+  "resolutions": {
+    "rollup": "4.52.5"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "~4.8.0-rc.2",
+    "@monaco-editor/loader": "~1.6.1",
+    "monaco-editor": "~0.54.0",
+    "monaco-yaml": "~5.4.0",
+    "react": "~19.2.0",
+    "react-dom": "~19.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.2",
+    "@types/react-dom": "~19.2.2",
+    "@vitejs/plugin-react": "~5.1.0",
+    "typescript": "~5.7.3",
+    "vite": "~7.1.12"
+  }
+}
