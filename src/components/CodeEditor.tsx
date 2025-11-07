@@ -1,7 +1,5 @@
 import {useEffect, useRef} from 'react'
 import {editor} from 'monaco-editor'
-import EditorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker'
-import YamlWorker from 'monaco-yaml/yaml.worker?worker'
 import {Editor, loader} from '@monaco-editor/react'
 import {configureMonacoYaml} from 'monaco-yaml'
 
@@ -9,15 +7,16 @@ window.MonacoEnvironment = {
     getWorker(moduleId, label) {
         switch (label) {
             case 'editorWorkerService':
-                return new EditorWorker()
+                return new Worker(new URL('monaco-editor/esm/vs/editor/editor.worker.js', import.meta.url), {
+                    type: 'module'
+                })
             case 'yaml':
-                return new YamlWorker()
+                return new Worker(new URL('./yaml.worker.js', import.meta.url), {type: 'module'})
             default:
                 throw new Error(`Unknown label ${label}`)
         }
     }
 }
-
 
 type CodeEditorProps = {
     value?: string

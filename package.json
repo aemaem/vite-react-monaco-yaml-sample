@@ -4,7 +4,7 @@
   "private": false,
   "type": "module",
   "scripts": {
-    "start": "mkdir -p public/monaco-editor && cp -R node_modules/monaco-editor/min public/monaco-editor && vite",
+    "start": "mkdir -p public/monaco-editor && cp -R node_modules/monaco-editor/min public/monaco-editor && mkdir -p public/monaco-yaml && cp -R node_modules/monaco-yaml public/monaco-yaml && vite",
     "build": "vite build"
   },
   "resolutions": {
